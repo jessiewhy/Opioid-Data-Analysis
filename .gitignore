@@ -1,0 +1,28 @@
+# Node Modules #
+###################
+
+# IDE Config Files #
+####################
+catalog.xml
+nbproject/
+.idea/
+*.iml
+.ackrc
+.brackets.json
+*.sublime-project
+*.sublime-workspace
+.vscode/
+.tm_properties
+
+# OS Generated Files #
+######################
+.DS_Store
+
+bin/
+!bin/verify-user
+!bin/change-role
+
+# Temp files #
+##############
+\#*\#
+*~
