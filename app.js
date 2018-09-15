@@ -10,6 +10,10 @@ app.get("/", function(req, res) {
   res.render("map");
 });
 
+app.get("/test", function(req, res) {
+  res.render("test");
+});
+
 app.listen(process.env.PORT || 3000, function(){
   console.log("website started");
 });

@@ -14,6 +14,13 @@ http://bl.ocks.org/mbostock/3888852  */
 var width = 960;
 var height = 500;
 var active = d3.select(null);
+var idGradient = "legendGradient";
+var x1 = 200,
+    y1 = 150,
+    barWidth = 25,
+    barHeight = 100,
+    numberHues = 35;
+
 // D3 Projection
 var projection = d3.geo.albersUsa()
            .translate([width/2, height/2])    // translate to center of screen
@@ -32,18 +39,91 @@ var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
 
 //Create SVG element and append map to the SVG
 var svg = d3.select("body")
-      .append("svg")
-      .attr("width", width)
-      .attr("height", height);
+  .append("svg")
+  .attr("width", width)
+  .attr("height", height);
         
 // Append Div for tooltip to SVG
 var div = d3.select("body")
-        .append("div")   
-        .attr("class", "tooltip")               
-        .style("opacity", 0);
+  .append("div")   
+  .attr("class", "tooltip")               
+  .style("opacity", 0);
+
+var legend = d3.select("body").append("svg")
+                .attr("class", "legend")
+              .attr("width", 140)
+              .attr("height", 200);
+
+legend.append("defs")
+  .append("linearGradient")
+    .attr("id",idGradient)
+    .attr("x1","0%")
+    .attr("x2","0%")
+    .attr("y1","0%")
+    .attr("y2","100%");
+
+legend.append("rect")
+  .attr("fill","url(#" + idGradient + ")")
+  .attr("x",0)
+  .attr("y",0)
+  .attr("width",barWidth)
+  .attr("height",barHeight)
+  .attr("rx",10)  //rounded corners, of course!
+  .attr("ry",10);
+
+var textY = y1 + barHeight/2 + 15;
+legend.append("text")
+  .attr("class","legendText")
+  .attr("text-anchor", "middle")
+  .attr("x",0)
+  .attr("y",0)
+  .attr("dy",0)
+  .text("0");
+legend.append("text")
+  .attr("class","legendText")
+  .attr("text-anchor", "left")
+  .attr("x",x1 + barHeight + 15)
+  .attr("y",textY)
+  .attr("dy",0)
+  .text(numberHues + "+");
+
 
 var g = svg.append("g");
+var hueStart = 100, hueEnd = 0;
+var opacityStart = 0.3, opacityEnd = 1.0;
+var theHue, rgbString, opacity,p;
 
+var deltaPercent = 1/(numberHues-1);
+var deltaHue = (hueEnd - hueStart)/(numberHues - 1);
+var deltaOpacity = (opacityEnd - opacityStart)/(numberHues - 1);
+
+//kind of out of order, but set up the data here 
+var theData = [];
+for (var i=0;i < numberHues;i++) {
+    theHue = hueStart + deltaHue*i;
+    //the second parameter, set to 1 here, is the saturation
+    // the third parameter is "lightness"    
+    rgbString = d3.hsl(theHue,1,0.6).toString();
+    opacity = opacityStart + deltaOpacity*i;
+    p = 0 + deltaPercent*i;
+    //onsole.log("i, values: " + i + ", " + rgbString + ", " + opacity + ", " + p);
+    theData.push({"rgb":rgbString, "opacity":opacity, "percent":p});       
+}
+
+//now the d3 magic (imo) ...
+var stops = d3.select('#' + idGradient).selectAll('stop')
+                    .data(theData);
+                    
+    stops.enter().append('stop');
+    stops.attr('offset',function(d) {
+                            return d.percent;
+  })
+  .attr('stop-color',function(d) {
+              return d.rgb;
+  })
+  .attr('stop-opacity',function(d) {
+              return d.opacity;
+  });
 // Load in my states data!
 d3.csv("/resources/stateslived.csv", function(data) {
   color.domain([0,1,2,3]);
@@ -73,8 +153,8 @@ d3.csv("/resources/stateslived.csv", function(data) {
           if (value) {
             return color(value);
           }
-        })
-;  
+        });
+
     d3.csv("resources/cities-lived.csv", function(data) {
       g.selectAll("circle")
         .data(data)
@@ -108,28 +188,6 @@ d3.csv("/resources/stateslived.csv", function(data) {
                .style("opacity", 0);   
         });
     });
-    // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-    var legend = d3.select("body").append("svg")
-                .attr("class", "legend")
-              .attr("width", 140)
-              .attr("height", 200)
-              .selectAll("g")
-              .data(color.domain().slice().reverse())
-              .enter()
-              .append("g")
-              .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
-
-        legend.append("rect")
-            .attr("width", 18)
-            .attr("height", 18)
-            .style("fill", color);
-
-        legend.append("text")
-            .data(legendText)
-              .attr("x", 24)
-              .attr("y", 9)
-              .attr("dy", ".35em")
-              .text(function(d) { return d; });
   });
 });
 
