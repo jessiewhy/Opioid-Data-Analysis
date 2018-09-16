@@ -6,8 +6,8 @@ Behavioral Analyst,0,0,12
 CRNA,1,13,209
 Cardiac Electrophysiology,10,148,32110
 Cardiac Surgery,16,982,6359
-Cardiology,156,8597,1832833
-Certified Clinical Nurse Specialist,12,633,72722
+Cardiology,157,8597,1838571
+Certified Clinical Nurse Specialist,12,633,73680
 Certified Nurse Midwife,1,82,1215
 Chiropractic,0,0,14
 Clinic/Center,4,316,5102
@@ -17,30 +17,30 @@ Colorectal Surgery (formerly proctology),27,775,2191
 Community Health Worker,1,135,38054
 Counselor,0,0,598
 Critical Care (Intensivists),11,130,17787
-Dentist,1056,25339,153727
-Dermatology,61,2601,112767
-Diagnostic Radiology,11,170,2161
-Emergency Medicine,1035,69309,400661
-Endocrinology,31,2585,325396
+Dentist,1056,25339,153750
+Dermatology,61,2601,112878
+Diagnostic Radiology,11,170,2173
+Emergency Medicine,1040,69426,401130
+Endocrinology,31,2585,326247
 Family Medicine,6,217,4754
-Family Practice,2625,584557,10421096
+Family Practice,2627,584587,10422317
 Gastroenterology,110,4203,287343
 General Acute Care Hospital,1,16,201
 General Practice,131,30046,571176
 General Surgery,439,23219,74768
-Geriatric Medicine,53,14058,302631
+Geriatric Medicine,54,14102,303535
 Geriatric Psychiatry,1,13,6485
 Gynecological/Oncology,17,595,1905
 Hand Surgery,39,3450,4670
 Health Maintenance Organization,1,49,2298
 Hematology,19,1196,8950
-Hematology/Oncology,195,17114,74595
+Hematology/Oncology,196,17114,74610
 Homeopath,0,0,100
 Hospice and Palliative Care,11,1928,8572
 Hospital (Dmercs Only),0,0,410
 Hospitalist,5,63,1785
-Infectious Disease,48,5749,61282
-Internal Medicine,2389,515172,11296307
+Infectious Disease,49,5918,64159
+Internal Medicine,2399,515401,11303936
 Interventional Pain Management,44,53796,98952
 Interventional Radiology,3,152,1001
 Legal Medicine,1,11,380
@@ -56,15 +56,15 @@ Multispecialty Clinic/Group Practice,2,850,4287
 Naturopath,2,42,383
 Nephrology,131,7565,334538
 Neurological Surgery,3,36,137
-Neurology,188,21792,393145
+Neurology,190,21917,393537
 "Neuromusculoskeletal Medicine, Sports Medicine",3,1011,1982
 Neuropsychiatry,4,536,18945
 Neurosurgery,74,8411,21059
 Nuclear Medicine,2,188,1011
-Nurse Practitioner,1348,174283,2197086
+Nurse Practitioner,1350,174306,2198103
 Obstetrics/Gynecology,143,3214,84680
-Ophthalmology,66,2695,350501
-Optometry,3,16,103185
+Ophthalmology,66,2695,350579
+Optometry,3,16,103200
 Oral & Maxillofacial Surgery,7,435,595
 Oral Surgery (dentists only),127,9900,24647
 Orthopaedic Surgery,25,838,1263
@@ -73,22 +73,22 @@ Osteopathic Manipulative Medicine,15,3847,37300
 Otolaryngology,163,4037,76951
 Pain Management,53,62425,103647
 Pathology,3,122,3114
-Pediatric Medicine,28,1971,45524
+Pediatric Medicine,28,1971,45548
 Pharmacist,7,373,7681
 Pharmacy Technician,0,0,44
 Physical Medicine and Rehabilitation,177,87712,174511
 Physical Therapist,0,0,102
-Physician Assistant,1258,112502,1195825
+Physician Assistant,1261,112593,1196261
 Plastic Surgery,10,174,601
 Plastic and Reconstructive Surgery,86,2880,6790
-Podiatry,223,8731,47077
+Podiatry,224,8745,47145
 Preferred Provider Organization,2,23,155
 Preventive Medicine,6,68,12514
-Psychiatry,76,3491,989941
-Psychiatry & Neurology,14,134,82552
+Psychiatry,76,3491,992502
+Psychiatry & Neurology,14,134,82995
 Psychologist,0,0,47
 Psychologist (billing independently),2,27,2075
-Pulmonary Disease,77,4804,307363
+Pulmonary Disease,78,4829,307559
 Radiation Oncology,66,1884,10308
 Registered Nurse,6,1075,13163
 Rehabilitation Agency,1,30,385
@@ -98,12 +98,12 @@ Slide Preparation Facility,0,0,103
 Specialist,14,1181,9424
 Specialist/Technologist,0,0,64
 Sports Medicine,12,649,1597
-Student in an Organized Health Care Education/Training Program,239,4314,60892
+Student in an Organized Health Care Education/Training Program,244,4406,63044
 Surgery,4,52,124
 Surgical Oncology,12,411,1797
 Thoracic Surgery,31,1183,4686
 Thoracic Surgery (Cardiothoracic Vascular Surgery),0,0,54
 Unknown Physician Specialty Code,4,74,1490
 Unknown Supplier/Provider,1,24,276
-Urology,259,12444,290901
+Urology,259,12444,291230
 Vascular Surgery,52,2663,10097

@@ -60,7 +60,7 @@ recognition.onresult = function(event) {
   var mobileRepeatBug = (current == 1 && transcript == event.results[0][0].transcript);
 
   noteContent += transcript;
-  noteTextarea.val(noteContent);
+  console.log(noteContent);
   if (begin) {
     if (noteContent.match(/[*ry]/g)) {
       giri.text("giri says hello")
@@ -78,7 +78,7 @@ recognition.onresult = function(event) {
   }
 };
 
-recognition.onend = function() {
+recognition.onspeechend = function() {
   if (!begin) {
     instructions.text('giri is not listening blah blah blah :(');
   }
@@ -103,9 +103,3 @@ $('#askgiri').on('click', function(e) {
   instructions.text('Say hey giri!');
   recognition.start();
 });
-
-
-// Sync the text inside the text area with the noteContent variable.
-noteTextarea.on('input', function() {
-  noteContent = $(this).val();
-})
