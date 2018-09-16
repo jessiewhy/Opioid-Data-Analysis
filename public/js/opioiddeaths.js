@@ -14,7 +14,7 @@ http://bl.ocks.org/mbostock/3888852  */
 var width = 960;
 var height = 500;
 var active = d3.select(null);
-var idGradient = "legendGradient2";
+var idGradient = "legendGradient1";
 var x1 = 200,
     y1 = 150,
     barWidth = 25,
@@ -30,9 +30,7 @@ var projection = d3.geo.albersUsa()
 var path = d3.geo.path()               // path generator that will convert GeoJSON to SVG paths
          .projection(projection);  // tell path generator to use albersUsa projection
 
-    
-// Define linear scale for output
-var svg = d3.select(".prescriptions")
+var svg = d3.select(".deaths")
   .append("svg")
   .attr("width", width)
   .attr("height", height);
@@ -72,7 +70,7 @@ svg.append("text")
   .attr("text-anchor", "right")
   .attr("x", 860)
   .attr("y", 285)
-  .text("# of Prescriptions");
+  .text("# of Deaths");
 svg.append("text")
   .attr("class", "legendText")
   .attr("text-anchor", "right")
@@ -103,30 +101,17 @@ for (var i=0;i < numberHues;i++) {
     theData.push({"rgb":rgbString, "opacity":opacity, "percent":p});       
 }
 
-//now the d3 magic (imo) ...
-var stops = d3.select('#' + idGradient).selectAll('stop')
-                    .data(theData);
-    stops.enter().append('stop');
-    stops.attr('offset',function(d) {
-                            return d.percent;
-  })
-  .attr('stop-color',function(d) {
-              return d.rgb;
-  })
-  .attr('stop-opacity',function(d) {
-              return d.opacity;
-  });
 // Load in my states data!
-d3.csv("/resources/stateOpioids.csv", function(data) {
+d3.csv("/resources/deaths.csv", function(data) {
   d3.json("/resources/us-states.json", function(json) {
     for (var i = 0; i < data.length; i++) {
-      var dataState = data[i].state;
-      var dataValue = data[i].prescribs;
+      var dataState = data[i].State;
+      var dataValue = data[i].Deaths;
       // Find the corresponding state inside the GeoJSON
       for (var j = 0; j < json.features.length; j++)  {
           var jsonState = json.features[j].properties.name;
           if (dataState == jsonState) {
-            json.features[j].properties.prescribs = Math.floor(dataValue/100); 
+            json.features[j].properties.deaths = Math.floor(dataValue); 
             break;
           }
         }
@@ -140,7 +125,7 @@ d3.csv("/resources/stateOpioids.csv", function(data) {
        .on("click", clicked)
        .attr("class", "feature")
        .style("fill", function(d) {
-          var value = d.properties.prescribs;
+          var value = d.properties.deaths;
           console.log(value)
           if (value) {
             return legendColors[value];

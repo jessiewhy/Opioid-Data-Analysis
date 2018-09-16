@@ -1,4 +1,4 @@
-,State,Population,Deaths,Abbrev,DeathsVsPopulation
+num,State,Population,Deaths,Abbrev,DeathsVsPopulation
 0,Alabama,4833722,723,AL,0.0001495741790694624
 1,Alaska,735132,124,AK,0.00016867718994683948
 2,Arizona,6626624,1211,AZ,0.00018274765551810394
