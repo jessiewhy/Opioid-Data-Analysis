@@ -46,3 +46,8 @@ body {
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+.legendText {
+    font-family:"Arial, sans-serif";
+    font-weight: bold;
+  }
