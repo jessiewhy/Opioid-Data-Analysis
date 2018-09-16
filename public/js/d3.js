@@ -31,16 +31,19 @@ var color = d3.scale.linear()
 var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
 
 //Create SVG element and append map to the SVG
-var svg = d3.select("body")
+var svg = d3.select(".map")
       .append("svg")
       .attr("width", width)
-      .attr("height", height);
+      .attr("height", height)        
+      .style("display", "block")
+      .style("margin", "auto");
         
 // Append Div for tooltip to SVG
-var div = d3.select("body")
+var div = d3.select(".map")
         .append("div")   
         .attr("class", "tooltip")               
-        .style("opacity", 0);
+        .style("opacity", 0)               
+        .style("display", "block");
 
 var g = svg.append("g");
 
