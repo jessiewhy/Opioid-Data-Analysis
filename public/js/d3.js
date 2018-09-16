@@ -36,8 +36,6 @@ var color = d3.scale.linear()
         .range(["rgb(213,222,217)","rgb(69,173,168)","rgb(84,36,55)","rgb(217,91,67)"]);
 
 var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
-
-//Create SVG element and append map to the SVG
 var svg = d3.select("body")
   .append("svg")
   .attr("width", width)
