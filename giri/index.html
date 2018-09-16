@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Voice Controlled Notes App</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/shoelace-css/1.0.0-beta16/shoelace.css">
+        <link rel="stylesheet" href="styles.css">
+
+    </head>
+    <body>
+        <div class="container">
+
+            <h1 id="girititle">Giri, like Siri (but better)</h1>
+
+            <h3 class="no-browser-support">Sorry, Your Browser Doesn't Support the Web Speech API. Try Opening This Demo In Google Chrome.</h3>
+
+            <div class="app"> 
+                <h3 id="giri">Wake up giri!</h3>
+                <p id="gotcha"> SORRY! Giri can't actually answer that.... well it can't really do anything lol. Heres a gif related to what you asked it (if giri even got that right lol). Our hack sort of fell apart at 3am so we just put this together for fun. Click <a id="askgiri"href="">here</a> to ask giri another question or <a href="">here</a> to see our partial hack. Ty :)</p>
+                <div class="input-single">
+                    <img id="giripic" src="giri.jpg">
+                    <iframe id="giphy" src="" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+                    <p><a id="giflink" href="https://giphy.com/gifs/flofromprogressive-progressive-flo-w6etTIjCn7nExl9xI6">via GIPHY</a></p>
+                </div>
+                <p id="recording-instructions">Say "hi giri" </p>
+
+            </div>
+
+        </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
+
+
