@@ -36,23 +36,12 @@ var color = d3.scale.linear()
         .range(["rgb(213,222,217)","rgb(69,173,168)","rgb(84,36,55)","rgb(217,91,67)"]);
 
 var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
-var svg = d3.select("body")
+var svg = d3.select(".prescriptions")
   .append("svg")
   .attr("width", width)
   .attr("height", height);
-        
-// Append Div for tooltip to SVG
-var div = d3.select("body")
-  .append("div")   
-  .attr("class", "tooltip")               
-  .style("opacity", 0);
 
-var legend = d3.select("body").append("svg")
-                .attr("class", "legend")
-              .attr("width", 160)
-              .attr("height", 200);
-
-legend.append("defs")
+svg.append("defs")
   .append("linearGradient")
     .attr("id",idGradient)
     .attr("x1","0%")
@@ -60,39 +49,39 @@ legend.append("defs")
     .attr("y1","0%")
     .attr("y2","100%");
 
-legend.append("rect")
+svg.append("rect")
   .attr("fill","url(#" + idGradient + ")")
-  .attr("x",25)
-  .attr("y",20)
+  .attr("x",830)
+  .attr("y",250)
   .attr("width",barWidth)
   .attr("height",barHeight)
   .attr("rx",10)  //rounded corners, of course!
   .attr("ry",10);
 
 var textY = y1 + barHeight/2 + 15;
-legend.append("text")
+svg.append("text")
   .attr("class","legendText")
   .attr("text-anchor", "middle")
-  .attr("x",40)
-  .attr("y",15)
+  .attr("x",842.5)
+  .attr("y",245)
   .text("0");
-legend.append("text")
+svg.append("text")
   .attr("class","legendText")
   .attr("text-anchor", "middle")
-  .attr("x", 40)
-  .attr("y",barHeight+30)
+  .attr("x", 842.5)
+  .attr("y",barHeight+265)
   .text(numberHues);
-legend.append("text")
+svg.append("text")
   .attr("class", "legendText")
   .attr("text-anchor", "right")
-  .attr("x", 60)
-  .attr("y", 65)
+  .attr("x", 860)
+  .attr("y", 285)
   .text("# of Prescriptions");
-legend.append("text")
+svg.append("text")
   .attr("class", "legendText")
   .attr("text-anchor", "right")
-  .attr("x", 60)
-  .attr("y", 80)
+  .attr("x", 860)
+  .attr("y", 300)
   .text("(hundreds)");
 
 var g = svg.append("g");
